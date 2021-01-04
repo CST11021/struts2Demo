@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>struts2Demo</display-name>
+  
+  	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>
+			org.apache.struts2.dispatcher.FilterDispatcher  
+			<!--org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter-->
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
+<!-- 
+org.apache.struts2.dispatcher.FilterDispatcher作用:
+是Struts2的主要的Filter，负责四个方面的功能：
+        (1)执行Actions
+        (2)清除ActionContext
+        (3)维护静态内容
+        (4)清除request生命周期内的XWork的interceptors
+    另注：该过滤器应该过滤所有的请求URL。一般被设置为/*
+ -->
+
+
+
+
